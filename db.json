@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "Kirill",
+      "email": "dorkinkirill989@gmail.com",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "gender": "male",
+      "dateOfBirth": "2023-06-06",
+      "agreeToPrivacyPolicy": true,
+      "id": 1
+    }
+  ]
+}
