@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const RegistrationPage = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +13,7 @@ const RegistrationPage = () => {
     gender: "",
     dateOfBirth: "",
     agreeToPrivacyPolicy: false,
+    role: "user",
   });
   const [errors, setErrors] = useState({});
 
@@ -84,11 +88,12 @@ const RegistrationPage = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, role: "user" }),
         });
 
         if (response.ok) {
-          console.log("Пользователь зарегистрирован:", formData);
+          router.push("/login");
+          // console.log("Пользователь зарегистрирован:", formData);
 
           setFormData({
             name: "",

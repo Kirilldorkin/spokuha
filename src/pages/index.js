@@ -1,5 +1,5 @@
 import Head from "next/head";
-import RegistrationPage from "./registration";
+import LoginPage from "./login";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <RegistrationPage />
+        <LoginPage />
       </main>
     </>
   );

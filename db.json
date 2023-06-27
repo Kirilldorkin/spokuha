@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Kirill",
       "email": "dorkinkirill989@gmail.com",
       "password": "123456789",
@@ -8,7 +9,51 @@
       "gender": "male",
       "dateOfBirth": "2023-06-06",
       "agreeToPrivacyPolicy": true,
-      "id": 1
+      "role": "user"
+    },
+    {
+      "name": "Kirill",
+      "email": "dorkinkirill99@gmail.com",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "gender": "male",
+      "dateOfBirth": "2023-06-15",
+      "agreeToPrivacyPolicy": true,
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "name": "fgh",
+      "email": "wvddgbb@gmaill.com",
+      "password": "1234567",
+      "confirmPassword": "1234567",
+      "gender": "male",
+      "dateOfBirth": "2023-06-07",
+      "agreeToPrivacyPolicy": true,
+      "role": "user",
+      "id": 3
+    },
+    {
+      "name": "Kirill",
+      "email": "dorkinkirill989@gmil.com",
+      "password": "1234567",
+      "confirmPassword": "1234567",
+      "gender": "male",
+      "dateOfBirth": "2023-05-31",
+      "agreeToPrivacyPolicy": true,
+      "role": "user",
+      "id": 4
+    },
+    {
+      "name": "Kirill",
+      "email": "1@gmail.com",
+      "password": "1234567890",
+      "confirmPassword": "1234567890",
+      "gender": "male",
+      "dateOfBirth": "2023-05-29",
+      "agreeToPrivacyPolicy": true,
+      "role": "user",
+      "id": 5
     }
   ]
 }

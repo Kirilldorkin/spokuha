@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
+  const router = useRouter();
+  
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -22,12 +25,12 @@ const LoginPage = () => {
 
     const errors = {};
     if (!formData.email) {
-      errors.email = "Email is required";
+      errors.email = "Электронная почта обязательна";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "Email is invalid";
     }
     if (!formData.password) {
-      errors.password = "Password is required";
+      errors.password = "Необходим пароль";
     }
     setErrors(errors);
 
@@ -45,17 +48,18 @@ const LoginPage = () => {
       );
 
       if (user) {
-        console.log("User logged in:", user);
+        router.push("/chats-user");
+        // console.log("Пользователь вошел в систему:", user);
 
         setFormData({
           email: "",
           password: "",
         });
       } else {
-        setErrors({ email: "Invalid email or password" });
+        setErrors({ email: "Неправильный адрес электронной почты или пароль" });
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      console.error("Произошла ошибка:", error);
     }
   };
 
@@ -85,7 +89,7 @@ const LoginPage = () => {
           {errors.password && <h5>{errors.password}</h5>}
         </label>
 
-        <button type="submit">Login</button>
+        <button type="submit">Авторизоваться</button>
       </form>
 
       <p>
