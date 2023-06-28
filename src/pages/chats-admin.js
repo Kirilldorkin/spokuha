@@ -7,6 +7,7 @@ const ChatsAdminPage = () => {
     description: "",
   });
   const [chats, setChats] = useState([]);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     fetchChats();
@@ -35,6 +36,23 @@ const ChatsAdminPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setErrors({});
+    const errors = {};
+
+    if (!chatData.title) {
+      errors.title = "Укажите заголовок";
+    }
+
+    if (!chatData.description) {
+      errors.description = "Укажите описание";
+    }
+
+    setErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
 
     try {
       const response = await fetch("http://localhost:3001/chats", {
@@ -90,6 +108,7 @@ const ChatsAdminPage = () => {
             value={chatData.title}
             onChange={handleChange}
           />
+          {errors.title && <h5>{errors.title}</h5>}
         </label>
 
         <label>
@@ -99,6 +118,7 @@ const ChatsAdminPage = () => {
             value={chatData.description}
             onChange={handleChange}
           ></textarea>
+          {errors.description && <h5>{errors.description}</h5>}
         </label>
 
         <button type="submit">Создать чат</button>
@@ -114,7 +134,12 @@ const ChatsAdminPage = () => {
                   <span className="chat-title">{chat.title}</span>
                 </Link>
 
-                <button onClick={() => handleDelete(chat.id)}>Удалить</button>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDelete(chat.id)}
+                >
+                  Удалить
+                </button>
               </div>
 
               <span className="chat-description">{chat.description}</span>
@@ -122,9 +147,14 @@ const ChatsAdminPage = () => {
           </li>
         ))}
       </ul>
-      <Link className="btn-link" href={"/login"}>
-        <button className="center">Выйти</button>
-      </Link>
+      <div className="chats-btn">
+        <Link className="btn-link" href={"/login"}>
+          <button>Выйти</button>
+        </Link>
+        <Link className="btn-link" href={"/admin"}>
+          <button>Панель администратора</button>
+        </Link>
+      </div>
     </>
   );
 };

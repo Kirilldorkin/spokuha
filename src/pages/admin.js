@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const AdminPage = () => {
@@ -73,6 +74,9 @@ const AdminPage = () => {
           ))}
         </tbody>
       </table>
+      <Link href={"/chats-admin"}>
+        <button className="admin-btn">Вернуться</button>
+      </Link>
     </div>
   );
 };

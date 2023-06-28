@@ -1,0 +1,72 @@
+form {
+  width: 20%;
+  margin: 0 auto;
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 0.9em;
+
+    input {
+      margin-top: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    input[type="radio"] {
+      margin: 0.7em 0;
+      cursor: pointer;
+    }
+
+   
+    h5 {
+      color: red;
+      margin: 0.5em 0 0;
+      font-size: 0.8em;
+    }
+
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #555;
+      resize: vertical;
+    }
+    
+    textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  .gender-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label:nth-child(7) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 1.2rem 0;
+    input {
+      margin-bottom: 0.7rem;
+    }
+  }
+  
+  
+}

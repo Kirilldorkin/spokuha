@@ -39,9 +39,11 @@ const ChatsUserPage = () => {
           </li>
         ))}
       </ul>
-      <Link className="btn-link" href={"/login"}>
-        <button className="center">Выйти</button>
-      </Link>
+      <div className="chats-btn">
+        <Link className="btn-link" href={"/login"}>
+          <button>Выйти</button>
+        </Link>
+      </div>
     </>
   );
 };
