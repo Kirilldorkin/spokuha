@@ -1,59 +1,44 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Kirill",
-      "email": "dorkinkirill989@gmail.com",
-      "password": "123456789",
-      "confirmPassword": "123456789",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "confirmPassword": "admin",
       "gender": "male",
-      "dateOfBirth": "2023-06-06",
-      "agreeToPrivacyPolicy": true,
-      "role": "user"
-    },
-    {
-      "name": "Kirill",
-      "email": "dorkinkirill99@gmail.com",
-      "password": "123456789",
-      "confirmPassword": "123456789",
-      "gender": "male",
-      "dateOfBirth": "2023-06-15",
+      "dateOfBirth": "0000-00-00",
       "agreeToPrivacyPolicy": true,
       "role": "admin",
+      "id": 1
+    },
+    {
+      "name": "kirill",
+      "email": "kirill@gmail.com",
+      "password": "kirill123",
+      "confirmPassword": "kirill123",
+      "gender": "male",
+      "dateOfBirth": "2023-01-31",
+      "agreeToPrivacyPolicy": true,
+      "role": "user",
+      "id": 2
+    }
+  ],
+  "chats": [
+    {
+      "title": "Экстренная помощь",
+      "description": "Тут вы можете напрямую попросить о помощи и вам моментально ответят",
+      "id": 1
+    },
+    {
+      "title": "Агорафобия",
+      "description": "Боязнь открытых пространств",
       "id": 2
     },
     {
-      "name": "fgh",
-      "email": "wvddgbb@gmaill.com",
-      "password": "1234567",
-      "confirmPassword": "1234567",
-      "gender": "male",
-      "dateOfBirth": "2023-06-07",
-      "agreeToPrivacyPolicy": true,
-      "role": "user",
+      "title": "Антропофобия",
+      "description": "Боязнь людей, толпы",
       "id": 3
-    },
-    {
-      "name": "Kirill",
-      "email": "dorkinkirill989@gmil.com",
-      "password": "1234567",
-      "confirmPassword": "1234567",
-      "gender": "male",
-      "dateOfBirth": "2023-05-31",
-      "agreeToPrivacyPolicy": true,
-      "role": "user",
-      "id": 4
-    },
-    {
-      "name": "Kirill",
-      "email": "1@gmail.com",
-      "password": "1234567890",
-      "confirmPassword": "1234567890",
-      "gender": "male",
-      "dateOfBirth": "2023-05-29",
-      "agreeToPrivacyPolicy": true,
-      "role": "user",
-      "id": 5
     }
-  ]
+  ],
+  "messages": []
 }

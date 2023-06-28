@@ -11,7 +11,7 @@ const AdminPage = () => {
         setUsers(users);
         console.log(users);
       } catch (error) {
-        console.error("Error retrieving users:", error);
+        console.error("Ошибка при получении пользователей:", error);
       }
     }
 
@@ -29,17 +29,16 @@ const AdminPage = () => {
       });
 
       if (response.ok) {
-        // Update the users state with the updated role
         setUsers((prevUsers) =>
           prevUsers.map((user) =>
             user.id === userId ? { ...user, role: newRole } : user
           )
         );
       } else {
-        console.error("Failed to update user role");
+        console.error("Не удалось обновить роль пользователя");
       }
     } catch (error) {
-      console.error("Error updating user role:", error);
+      console.error("Ошибка при обновлении роли пользователя:", error);
     }
   };
 

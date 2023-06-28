@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const LoginPage = () => {
   const router = useRouter();
-  
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,7 +27,7 @@ const LoginPage = () => {
     if (!formData.email) {
       errors.email = "Электронная почта обязательна";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Email is invalid";
+      errors.email = "Электронная почта недействительна";
     }
     if (!formData.password) {
       errors.password = "Необходим пароль";
@@ -48,9 +48,14 @@ const LoginPage = () => {
       );
 
       if (user) {
-        router.push("/chats-user");
+        if (user.role === "user") {
+          router.push("/chats-user"); 
+        } else if (user.role === "admin") {
+          router.push("/chats-admin"); 
+        }
         // console.log("Пользователь вошел в систему:", user);
-
+        localStorage.setItem('userId', user.id);
+      
         setFormData({
           email: "",
           password: "",
@@ -95,6 +100,8 @@ const LoginPage = () => {
       <p>
         У вас нет аккаунта? <Link href="/registration">Зарегистрироваться</Link>
       </p>
+
+      
     </>
   );
 };
