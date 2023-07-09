@@ -25,7 +25,7 @@ const ChatsUserPage = () => {
   return (
     <>
       <h1>Чаты:</h1>
-      <ul className="chat-list">
+      <ul className="list chats-list">
         {chats.map((chat) => (
           <li key={chat.id}>
             <div className="chat" title={chat.description}>
@@ -41,7 +41,7 @@ const ChatsUserPage = () => {
       </ul>
       <div className="chats-btn">
         <Link className="btn-link" href={"/login"}>
-          <button>Выйти</button>
+          <button className="user-out-btn">Выйти</button>
         </Link>
       </div>
     </>

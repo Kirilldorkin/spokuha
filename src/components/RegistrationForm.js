@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
+import Logo from "../../public/logo.png";
 
 const RegistrationForm = () => {
   const router = useRouter();
 
   const [formData, setFormData] = useState({
+    id: uuidv4(),
     name: "",
     email: "",
     password: "",
@@ -87,7 +91,7 @@ const RegistrationForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, role: "user" }),
+          body: JSON.stringify({ ...formData, id: uuidv4(), role: "user" }),
         });
 
         if (response.ok) {
@@ -113,54 +117,56 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
+      <img src={Logo.src} className="logo" alt="logo" />
+      <h1>Регистрация</h1>
       <label>
-        Имя:
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          placeholder="Имя"
         />
         {errors.name && <h5>{errors.name}</h5>}
       </label>
 
       <label>
-        Электронная почта:
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="Электронная почта"
         />
         {errors.email && <h5>{errors.email}</h5>}
       </label>
 
       <label>
-        Пароль:
         <input
           type="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
+          placeholder="Пароль"
         />
         {errors.password && <h5>{errors.password}</h5>}
       </label>
 
       <label>
-        Подтвердите пароль:
         <input
           type="password"
           name="confirmPassword"
           value={formData.confirmPassword}
           onChange={handleChange}
+          placeholder="Подтвердите пароль"
         />
         {errors.confirmPassword && <h5>{errors.confirmPassword}</h5>}
       </label>
 
-      <label>
-        <div className="gender-inputs">
-          Пол:
+      <label className="gender-inputs">
+        Пол:
+        <div className="gender-input">
           <input
             type="radio"
             name="gender"
@@ -169,6 +175,8 @@ const RegistrationForm = () => {
             onChange={handleChange}
           />
           Мужской
+        </div>
+        <div className="gender-input">
           <input
             type="radio"
             name="gender"
@@ -182,7 +190,6 @@ const RegistrationForm = () => {
       </label>
 
       <label>
-        Дата рождения:
         <input
           type="date"
           name="dateOfBirth"
@@ -192,7 +199,7 @@ const RegistrationForm = () => {
         {errors.dateOfBirth && <h5>{errors.dateOfBirth}</h5>}
       </label>
 
-      <label>
+      <label className="checkbox">
         <input
           type="checkbox"
           name="agreeToPrivacyPolicy"
@@ -200,11 +207,18 @@ const RegistrationForm = () => {
           onChange={handleChange}
           required
         />
-        Я согласен с условиями политики конфиденциальности
+        <h6>Я согласен с условиями политики конфиденциальности</h6>
         {errors.agreeToPrivacyPolicy && <h5>{errors.agreeToPrivacyPolicy}</h5>}
       </label>
 
       <button type="submit">Зарегистрироваться</button>
+
+      <p>
+        У меня уже есть аккаунт!{" "}
+        <Link className="link" href="/login">
+          Авторизоваться
+        </Link>
+      </p>
     </form>
   );
 };

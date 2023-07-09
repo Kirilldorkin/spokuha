@@ -17,6 +17,8 @@ const AdminPage = () => {
     }
 
     fetchUsers();
+    const intervalId = setInterval(fetchUsers, 1000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleRoleChange = async (userId, newRole) => {
@@ -43,6 +45,22 @@ const AdminPage = () => {
     }
   };
 
+  const handleDeleteUser = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/users/${userId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
+      } else {
+        console.error("Ошибка при удалении пользователя:", response.status);
+      }
+    } catch (error) {
+      console.error("Ошибка при удалении пользователя:", error);
+    }
+  };
+
   return (
     <div className="admin">
       <h1>Административная панель</h1>
@@ -59,7 +77,10 @@ const AdminPage = () => {
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
-              <td>
+              <td style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}>
                 <select
                   value={user.role}
                   onChange={(event) =>
@@ -69,6 +90,12 @@ const AdminPage = () => {
                   <option value="user">Пользователь</option>
                   <option value="admin">Администратор</option>
                 </select>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDeleteUser(user.id)}
+                >
+                  Удалить
+                </button>
               </td>
             </tr>
           ))}

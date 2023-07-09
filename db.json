@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": "68407e79-b261-40d4-9c1b-0eff295860b1",
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "admin",
@@ -8,19 +9,51 @@
       "gender": "male",
       "dateOfBirth": "0000-00-00",
       "agreeToPrivacyPolicy": true,
-      "role": "admin",
-      "id": 1
+      "role": "admin"
     },
     {
-      "name": "kirill",
+      "id": "e6834408-e261-414c-8edc-4529999f1e66",
+      "name": "Kirill",
       "email": "kirill@gmail.com",
       "password": "kirill123",
       "confirmPassword": "kirill123",
       "gender": "male",
-      "dateOfBirth": "2023-01-31",
+      "dateOfBirth": "2023-06-27",
       "agreeToPrivacyPolicy": true,
-      "role": "user",
-      "id": 2
+      "role": "user"
+    },
+    {
+      "id": "e6834408-e261-414c-8edc-4529998f1e66",
+      "name": "Artem",
+      "email": "artem@gmail.com",
+      "password": "artem123",
+      "confirmPassword": "artem123",
+      "gender": "male",
+      "dateOfBirth": "2023-06-27",
+      "agreeToPrivacyPolicy": true,
+      "role": "user"
+    },
+    {
+      "id": "36549190-0358-497a-8ec6-e78ee1469255",
+      "name": "nurik",
+      "email": "nurik@gmail.com",
+      "password": "nurik123",
+      "confirmPassword": "nurik123",
+      "gender": "male",
+      "dateOfBirth": "2023-06-27",
+      "agreeToPrivacyPolicy": true,
+      "role": "user"
+    },
+    {
+      "id": "8e564e41-922e-45f3-a325-d37ea4c0fd94",
+      "name": "methokb",
+      "email": "aab@gmail.com",
+      "password": "methokb",
+      "confirmPassword": "methokb",
+      "gender": "female",
+      "dateOfBirth": "2000-11-11",
+      "agreeToPrivacyPolicy": true,
+      "role": "user"
     }
   ],
   "chats": [
@@ -40,5 +73,84 @@
       "id": 3
     }
   ],
-  "messages": []
+  "messages": [
+    {
+      "message": "Hey",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 1
+    },
+    {
+      "message": "Hellooooo",
+      "userId": "e6834408-e261-414c-8edc-4529998f1e66",
+      "chatId": "1",
+      "id": 2
+    },
+    {
+      "message": "Wazzup???",
+      "userId": "36549190-0358-497a-8ec6-e78ee1469255",
+      "chatId": "1",
+      "id": 3
+    },
+    {
+      "message": "123",
+      "userId": "68407e79-b261-40d4-9c1b-0eff295860b1",
+      "chatId": "3",
+      "id": 4
+    },
+    {
+      "message": "qwe",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 5
+    },
+    {
+      "message": "qwe",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 6
+    },
+    {
+      "message": "Ya ystal",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 7
+    },
+    {
+      "message": ")))))",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 8
+    },
+    {
+      "message": "Ya toje",
+      "userId": "e6834408-e261-414c-8edc-4529998f1e66",
+      "chatId": "1",
+      "id": 9
+    },
+    {
+      "message": "12",
+      "userId": "68407e79-b261-40d4-9c1b-0eff295860b1",
+      "chatId": "1",
+      "id": 10
+    },
+    {
+      "message": "123",
+      "userId": "e6834408-e261-414c-8edc-4529999f1e66",
+      "chatId": "1",
+      "id": 11
+    },
+    {
+      "message": "123",
+      "userId": "68407e79-b261-40d4-9c1b-0eff295860b1",
+      "chatId": "1",
+      "id": 14
+    },
+    {
+      "message": "54",
+      "userId": "68407e79-b261-40d4-9c1b-0eff295860b1",
+      "chatId": "1",
+      "id": 15
+    }
+  ]
 }

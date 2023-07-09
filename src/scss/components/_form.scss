@@ -1,72 +1,122 @@
-form {
-  width: 20%;
+.form {
+  border-radius: 2.5rem;
+  background: #3e3f56;
+  width: 26%;
+  padding: 2.8rem;
   margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 1024px) {
+    width: 40%;
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
+
   label {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
-    color: #333;
-    font-size: 0.9em;
 
     input {
-      margin-top: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    input[type="date"] {
+      margin-top: 0.2rem;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="password"],
-    input[type="date"] {
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 2px;
-      font-size: 0.9em;
-      color: #333;
+    input[type="date"],
+    textarea {
+      padding: 1rem;
+      border: none;
+      font-size: 0.7em;
+      color: #828282;
+      border-radius: 1.5rem;
+      background: #323341;
+      outline: none;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        font-size: 0.8em;
+      }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      flex: 0 0 auto;
+      width: initial;
+      height: initial;
+      vertical-align: middle;
     }
 
     input[type="radio"] {
-      margin: 0.7em 0;
+      display: inline-block;
+      appearance: none;
       cursor: pointer;
-    }
-
-   
-    h5 {
-      color: red;
-      margin: 0.5em 0 0;
-      font-size: 0.8em;
-    }
-
-    textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      color: #555;
-      resize: vertical;
-    }
-    
-    textarea:focus {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
       outline: none;
-      border-color: #007bff;
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      margin-right: 8px;
+      background-color: #323341;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      cursor: pointer;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 4px;
+      outline: none;
+      margin-right: 8px;
+      background-color: #323341;
+    }
+
+    input[type="checkbox"]:checked,
+    input[type="radio"]:checked {
+      background-color: #828282;
     }
   }
 
   .gender-inputs {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    font-size: 0.8rem;
   }
 
-  label:nth-child(7) {
+  .gender-input {
     display: flex;
+    text-align: center;
     align-items: center;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 1.2rem 0;
-    input {
-      margin-bottom: 0.7rem;
+    justify-content: center;
+
+    input[type="radio"] {
+      margin-bottom: 1rem;
     }
   }
-  
-  
+
+  .checkbox {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    h6 {
+      margin-top: 0.8rem;
+      margin-left: 0.8rem;
+    }
+  }
 }

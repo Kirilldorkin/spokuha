@@ -1,5 +1,6 @@
 .admin {
   margin: 20px;
+  color: #fff;
 
   h1 {
     font-size: 24px;
@@ -8,28 +9,26 @@
 
   table {
     width: 100%;
-    border-collapse: collapse;
+    text-align: left;
+  }
 
-    th,
-    td {
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
+  th,
+  td {
+    border-radius: 1rem;
+  }
 
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
+  th,
+  td {
+    font-size: 0.8rem;
+    background-color: #3e3f56;
+  }
 
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
+  th {
+    padding: 1rem;
+  }
 
-    select {
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+  td {
+    padding: 1rem;
   }
 
   .admin-btn {

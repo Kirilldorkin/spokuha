@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import Logo from "../../public/logo.png"
 
 const LoginForm = () => {
   const router = useRouter();
@@ -47,13 +49,15 @@ const LoginForm = () => {
       );
 
       if (user) {
+        // localStorage.setItem("userId", user.id);
+        sessionStorage.setItem("userId", user.id); 
+
         if (user.role === "user") {
           router.push("/chats-user");
         } else if (user.role === "admin") {
           router.push("/chats-admin");
         }
         // console.log("Пользователь вошел в систему:", user);
-        localStorage.setItem("userId", user.id);
 
         setFormData({
           email: "",
@@ -68,30 +72,35 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
+      <img src={Logo.src} className="logo" alt="logo" />
+      <h1>Авторизация</h1>
       <label>
-        Электронная почта:
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="Электронная почта"
         />
         {errors.email && <h5>{errors.email}</h5>}
       </label>
 
       <label>
-        Пароль:
         <input
           type="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
+          placeholder="Пароль"
         />
         {errors.password && <h5>{errors.password}</h5>}
       </label>
 
       <button type="submit">Авторизоваться</button>
+      <p>
+        У вас нет аккаунта? <Link className="link" href="/registration">Зарегистрироваться</Link>
+      </p>
     </form>
   );
 };
